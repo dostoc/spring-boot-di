@@ -1,6 +1,5 @@
 package modulo2.springbootdi;
 
-import java.sql.Array;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,4 +39,22 @@ public class AppConfig {
 
         return Arrays.asList(linea1, linea2, linea3);
     }
+
+    @Bean("itemsFacturaOficina")
+    public List<ItemFactura> registrarFacturaOficina(){
+        Producto producto1 = new Producto("Monitor LG LCD 64pulgadas", 1500f);
+        Producto producto2 = new Producto("Notebook Asus 500", 890f);
+        Producto producto3 = new Producto("Teclado LG generico Lat", 25f);
+        Producto producto4 = new Producto("Kit Sonido 4 parlates", 90f);
+        Producto producto5 = new Producto("Headpones Gamer", 90f);
+
+        ItemFactura linea1 = new ItemFactura(producto1, 2);
+        ItemFactura linea2 = new ItemFactura(producto2, 1);
+        ItemFactura linea3 = new ItemFactura(producto3, 1);
+        ItemFactura linea4 = new ItemFactura(producto4, 1);
+        ItemFactura linea5 = new ItemFactura(producto5, 1);
+
+        return Arrays.asList(linea1, linea2, linea3, linea4, linea5);
+    }
 }
+
